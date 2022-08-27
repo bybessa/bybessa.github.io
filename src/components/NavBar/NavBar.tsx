@@ -7,8 +7,7 @@ import Whatsapp from '-!svg-react-loader!../../assets/icons/whatsapp-brands.svg'
 import Logo from '../../assets/logo.png';
 
 const navigation = [
-  { name: 'Início', href: '#', current: true },
-  { name: 'Catálogo', href: '#', current: false },
+  { name: 'Catálogo', href: '#', current: true },
   { name: 'Contato', href: '#', current: false },
   { name: 'Sobre', href: '#', current: false },
 ]
