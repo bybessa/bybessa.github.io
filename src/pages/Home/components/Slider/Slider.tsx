@@ -36,9 +36,9 @@ export const Slider = () => {
   
   useEffect(() => {
     if(swipedir === 'left') {
-      handlePrev();
+      handleNext(true);
     } else if(swipedir === 'right') {
-      handleNext();
+      handlePrev(true);
     }
   } , [swipedir]);
 
@@ -49,7 +49,7 @@ export const Slider = () => {
 
   const startSlider = () => {
     interval = setInterval(() => {
-      handleNext();
+      handleNext(false);
     }, 10000);
   };
 
@@ -57,16 +57,16 @@ export const Slider = () => {
     clearInterval(interval);
   }
 
-  const handleNext = () => {
-    if(!isPlaying) {
+  const handleNext = (skipAnim: boolean) => {
+    if(!isPlaying || skipAnim) {
       count = (count + 1) % images.length
       setCurrentIndex(count);
       sliderRef?.current?.classList.add('fade-anim');
     }
   }
 
-  const handlePrev = () => {
-    if(!isPlaying) {
+  const handlePrev = (skipAnim: boolean) => {
+    if(!isPlaying || skipAnim) {
       count = (count - 1) % images.length
       if(count < 0) {
         count = images.length - 1;
