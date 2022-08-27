@@ -1,10 +1,13 @@
 import React from 'react';
+import { NavBar } from './components';
+import { Router } from './routes';
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">By Bessa</h1>
-    </div>
+    <main className='flex flex-col'>
+      <NavBar />
+      <Router />
+    </main>
   );
 }
 
