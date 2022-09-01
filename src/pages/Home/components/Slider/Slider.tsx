@@ -100,8 +100,8 @@ export const Slider = () => {
 
   return (
     <div ref={sliderRef} className='relative flex justify-center items-center bg-black'>
-      <div className='w-screen overflow-hidden'>
-        <img src={images[currentIndex].src} alt='' className='opacity-70 w-full h-[35vh] lg:h-[60vh]'/>
+      <div className='w-full min-h-80 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-[60vh] lg:aspect-none'>
+        <img src={images[currentIndex].src} alt='' className='opacity-70 w-full h-full object-center object-cover lg:w-full lg:h-full'/>
       </div>
       <div className='absolute flex justify-center items-center w-full gap-5 bottom-3 transform -translate-y-1/2 px-3'>
         {
