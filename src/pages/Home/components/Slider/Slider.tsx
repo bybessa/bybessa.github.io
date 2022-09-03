@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from 'react'
-import Trees from '../../../../assets/slider/trees.png';
-import Logs from '../../../../assets/slider/logs.png';
-import Saw from '../../../../assets/slider/saw.png';
-import Torno from '../../../../assets/slider/torno.png';
+import Trees from '../../../../assets/slider/trees.webp';
+import Logs from '../../../../assets/slider/logs.webp';
+import Saw from '../../../../assets/slider/saw.webp';
+import Torno from '../../../../assets/slider/torno.webp';
 import './styles.css';
 
 const images = [
