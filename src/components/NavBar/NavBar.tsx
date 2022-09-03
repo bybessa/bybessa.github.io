@@ -2,14 +2,16 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Instagram from '-!svg-react-loader!../../assets/icons/instagram-brands.svg';
-import Whatsapp from '-!svg-react-loader!../../assets/icons/whatsapp-brands.svg';
+import {ReactComponent as Instagram} from '../../assets/icons/instagram-brands.svg';
+import {ReactComponent as Whatsapp} from '../../assets/icons/whatsapp-brands.svg';
 import Logo from '../../assets/logo.png';
+import './styles.css';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Catálogo', href: '#', current: true },
-  { name: 'Contato', href: '#', current: false },
-  { name: 'Sobre', href: '#', current: false },
+  { name: 'Catálogo', href: '/' },
+  { name: 'Contato', href: '/contato' },
+  { name: 'Sobre', href: '/sobre' },
 ]
 
 function classNames(...classes: string[]) {
@@ -17,6 +19,13 @@ function classNames(...classes: string[]) {
 }
 
 export const NavBar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goTo = (route: string) => {
+    navigate(route);
+  }
+
   return (
     <Disclosure as="nav" className="bg-[url('./assets/wood.jpg')] bg-cover">
       {({ open }) => (
@@ -50,33 +59,37 @@ export const NavBar = () => {
                 <div className="hidden sm:flex sm:ml-6 items-center">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <div
                         key={item.name}
-                        href={item.href}
+                        onClick={() => goTo(item.href)}
                         className={classNames(
-                          item.current ? 'bg-black text-white' : 'text-white hover:bg-gray-800',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          location.pathname === item.href ? 'bg-black text-white' : 'text-white hover:bg-gray-800',
+                          'px-3 py-2 rounded-md text-sm font-medium cursor-pointer'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={location.pathname === item.href ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="hidden sm:flex absolute inset-y-0 right-0 items-center gap-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div
-                  className="h-10 w-10 p-2 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-black"
+                <a
+                  href="https://www.instagram.com/bybessa.br/"
+                  target="_blank" rel="noopener noreferrer"
+                  className="h-10 w-10 p-2 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-black hover:bg-black parent transition ease-out duration-300"
                 >
-                  <Instagram />
-                </div>
-                <div
-                  className="h-10 w-10 p-2 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-black"
+                  <Instagram className='parent-hover:fill-white'/>
+                </a>
+                <a
+                  href='https://wa.me/message/P4KQJHUWDEW3F1'
+                  target="_blank" rel="noopener noreferrer"
+                  className="h-10 w-10 p-2 flex-shrink-0 flex items-center justify-center rounded-full border-2 border-black hover:bg-black parent transition ease-out duration-300"
                 >
                   <span className="sr-only">Whatsapp</span>
-                  <Whatsapp />
-                </div>
+                    <Whatsapp className='parent-hover:fill-white'/>
+                </a>
               </div>
             </div>
           </div>
@@ -89,10 +102,10 @@ export const NavBar = () => {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-black text-white' : 'text-white hover:bg-gray-700 hover:text-white',
+                    location.pathname === item.href ? 'bg-black text-white' : 'text-white hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={location.pathname === item.href ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
