@@ -1,3 +1,7 @@
 .parent:hover .parent-hover\:fill-white {
   fill: #fff;
 }
+
+.removeTapBg {
+  -webkit-tap-highlight-color: transparent;
+}
