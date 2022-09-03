@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.09cc9f1d.css",
-    "main.js": "/static/js/main.0c5d7af7.js",
+    "main.js": "/static/js/main.985893f8.js",
     "static/js/787.b8827007.chunk.js": "/static/js/787.b8827007.chunk.js",
-    "static/media/trees.png": "/static/media/trees.50ff9d0fc5e2c8fa206f.png",
-    "static/media/logs.png": "/static/media/logs.31b38f3c268e785d2d40.png",
     "static/media/wood.jpg": "/static/media/wood.4c0e32795bcb368b4ceb.jpg",
-    "static/media/saw.png": "/static/media/saw.7c0c3481836334e64079.png",
-    "static/media/torno.png": "/static/media/torno.71806de8c26ef3690747.png",
+    "static/media/trees.webp": "/static/media/trees.53e23d7367084416115a.webp",
     "static/media/logo.png": "/static/media/logo.838dce82edf6b482f437.png",
+    "static/media/logs.webp": "/static/media/logs.e73196c93d659ce176b5.webp",
+    "static/media/saw.webp": "/static/media/saw.76ddb5a5644eea454a37.webp",
+    "static/media/torno.webp": "/static/media/torno.ece6f34a1726d725ceaf.webp",
     "static/media/instagram-brands.svg": "/static/media/instagram-brands.f3f633f79aa3d2a898100e913b6f448f.svg",
     "static/media/whatsapp-brands.svg": "/static/media/whatsapp-brands.6a3d17ff6b5e037d47af14e423d35f93.svg",
     "index.html": "/index.html",
     "main.09cc9f1d.css.map": "/static/css/main.09cc9f1d.css.map",
-    "main.0c5d7af7.js.map": "/static/js/main.0c5d7af7.js.map",
+    "main.985893f8.js.map": "/static/js/main.985893f8.js.map",
     "787.b8827007.chunk.js.map": "/static/js/787.b8827007.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09cc9f1d.css",
-    "static/js/main.0c5d7af7.js"
+    "static/js/main.985893f8.js"
   ]
 }
